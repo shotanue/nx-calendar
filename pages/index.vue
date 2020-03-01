@@ -49,19 +49,19 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      dates () {
-        return this.$store.getters['calendar/dates']
-      },
-      month () {
-        return this.$store.getters['calendar/month']
-      }
+export default {
+  computed: {
+    dates () {
+      return this.$store.getters['calendar/dates']
+    },
+    month () {
+      return this.$store.getters['calendar/month']
     }
-    // methods: {
-    //   nextMonth () {
-    //     return this.$store.dispatch['calendar/moveMonth']
-    //   }
-    // }
   }
+  // methods: {
+  //   nextMonth () {
+  //     return this.$store.dispatch['calendar/moveMonth']
+  //   }
+  // }
+}
 </script>
