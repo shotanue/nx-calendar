@@ -5,7 +5,7 @@
     </div>
     <main class="h-screen w-screen lg:w-4/6 bg bg-purple-700 text-white text-center">
       <header class="container mx-auto grid grid-cols-3 h-16 content-center" style="height: 10vh">
-        <div @click="$store.dispatch('calendar/moveMonth', -1)" class="flex-1 opacity-50">
+        <div class="flex-1 opacity-50" @click="$store.dispatch('calendar/moveMonth', -1)">
           <span class="block">{{ month('prev').month }}</span>
           <span class="block">{{ month('prev').year }}</span>
         </div>
@@ -13,7 +13,7 @@
           <span class="block">{{ month('cur').month }}</span>
           <span class="block">{{ month('cur').year }}</span>
         </div>
-        <div @click="$store.dispatch('calendar/moveMonth', 1)" class="flex-1 opacity-50">
+        <div class="flex-1 opacity-50" @click="$store.dispatch('calendar/moveMonth', 1)">
           <span class="block">{{ month('next').month }}</span>
           <span class="block">{{ month('next').year }}</span>
         </div>
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="container mx-auto grid grid-cols-7" style="height: 85vh">
-        <span v-for="x in dates" v-bind:class="{'opacity-50': !x.isSameMonth}">{{ x.date }}</span>
+        <span v-for="(x, index) in dates" :key="index" :class="{'opacity-50': !x.isSameMonth}">{{ x.date }}</span>
       </div>
     </main>
   </div>
